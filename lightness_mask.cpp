@@ -1,5 +1,8 @@
 #include "lightness_mask.h"
 
+#include <QDebug>
+#define cout qDebug()
+
 lightness_mask::lightness_mask(QScreen *screen)
     : QMainWindow()
     , screen(screen)
@@ -12,6 +15,8 @@ lightness_mask::lightness_mask(QScreen *screen)
 
     // 设置宽高
     resize(deskRect.width(), deskRect.height() - 1);
+
+    cout << deskRect.width() << " " << deskRect.height();
 
     // 透明度
     setWindowOpacity(0.5);
